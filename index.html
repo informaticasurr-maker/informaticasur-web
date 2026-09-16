@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Informática Sur - Laboratorio de Reparación Electrónica & Soporte Informático | Puerto Madryn</title>
+  <meta name="description" content="Diagnóstico especializado, microelectrónica y reparación integral de Notebooks, PCs y placas en Puerto Madryn.">
+  <!-- Estilos Modernos Mobile-First con Paleta Patagónica -->
+  <style>
+    :root {
+      --bg: #070d1e;
+      --card-bg: #111a36;
+      --card-border: rgba(56, 189, 248, 0.15);
+      --primary: #38bdf8;
+      --primary-hover: #0ea5e9;
+      --accent: #6366f1;
+      --wa: #22c55e;
+      --wa-hover: #16a34a;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+    .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+    
+    /* Header & Hero */
+    header { padding: 40px 0 30px; text-align: center; }
+    .avatar-wrapper { display: inline-block; padding: 4px; background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 50%; box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3); margin-bottom: 16px; }
+    .avatar { width: 90px; height: 90px; border-radius: 50%; background: #1c2541; display: flex; align-items: center; justify-content: center; font-size: 40px; border: 3px solid var(--bg); }
+    .badge-location { display: inline-flex; align-items: center; gap: 6px; background: rgba(56, 189, 248, 0.1); color: var(--primary); padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; margin-bottom: 14px; border: 1px solid var(--card-border); }
+    h1 { font-size: 32px; font-weight: 800; line-height: 1.2; margin-bottom: 12px; background: linear-gradient(to right, #ffffff, #93c5fd); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .subtitle { font-size: 16px; color: var(--muted); max-width: 620px; margin: 0 auto 24px; }
+    
+    /* CTA Buttons */
+    .cta-group { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 35px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 24px; border-radius: 14px; font-size: 15px; font-weight: 700; text-decoration: none; transition: all 0.2s; cursor: pointer; border: none; }
+    .btn:active { transform: scale(0.98); }
+    .btn-wa { background: var(--wa); color: #fff; box-shadow: 0 8px 20px rgba(34, 197, 94, 0.3); }
+    .btn-wa:hover { background: var(--wa-hover); }
+    .btn-vcard { background: rgba(255,255,255,0.06); color: var(--text); border: 1px solid rgba(255,255,255,0.15); }
+    .btn-vcard:hover { background: rgba(255,255,255,0.12); }
+    .btn-ig { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: #fff; }
+    .btn-gps { background: #475569; color: #fff; }
+
+    /* Stories Carousel (8 Fotos) */
+    .section-title { font-size: 20px; font-weight: 700; margin: 30px 0 16px; display: flex; align-items: center; gap: 8px; }
+    .stories-track { display: flex; gap: 14px; overflow-x: auto; padding: 6px 2px 20px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+    .stories-track::-webkit-scrollbar { display: none; }
+    .story-card { flex: 0 0 150px; scroll-snap-align: start; text-align: center; }
+    .story-ring { padding: 3px; background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); border-radius: 18px; box-shadow: 0 8px 18px rgba(220, 39, 67, 0.25); }
+    .story-thumb { width: 100%; height: 160px; background: #1e293b; border-radius: 15px; display: flex; align-items: center; justify-content: center; border: 2px solid var(--bg); }
+    .story-emoji { font-size: 44px; }
+    .story-caption { display: block; margin-top: 8px; font-size: 13px; font-weight: 700; color: #f8fafc; }
+    .story-desc { display: block; font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+    /* Value Props Grid */
+    .props-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 14px; }
+    .prop-card { background: var(--card-bg); border: 1px solid var(--card-border); padding: 20px; border-radius: 18px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+    .prop-icon { font-size: 24px; color: var(--primary); margin-bottom: 8px; }
+    .prop-card h3 { font-size: 16px; margin-bottom: 6px; color: #fff; }
+    .prop-card p { font-size: 13px; color: var(--muted); }
+
+    /* About Us Box */
+    .about-box { background: linear-gradient(135deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.9)); border: 1px solid var(--card-border); padding: 26px; border-radius: 20px; margin-top: 14px; }
+    .about-box p { font-size: 14px; color: #cbd5e1; line-height: 1.7; }
+
+    /* Location & Footer */
+    .contact-box { background: var(--card-bg); border: 1px solid var(--card-border); padding: 22px; border-radius: 18px; margin: 14px 0 40px; display: flex; flex-direction: column; gap: 12px; }
+    .contact-item { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #e2e8f0; }
+    footer { text-align: center; padding: 24px 0 80px; font-size: 12px; color: var(--muted); border-top: 1px solid rgba(255,255,255,0.06); }
+
+    /* Floating Action Button (FAB) */
+    .fab-wa { position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; background: var(--wa); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: #fff; text-decoration: none; box-shadow: 0 10px 25px rgba(34, 197, 94, 0.4); z-index: 100; transition: transform 0.2s; }
+    .fab-wa:active { transform: scale(0.9); }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header / Hero -->
+    <header>
+      <div class="avatar-wrapper">
+        <div class="avatar">💻</div>
+      </div>
+      <br>
+      <div class="badge-location">📍 Puerto Madryn, Puerto Madryn</div>
+      <h1>Laboratorio de Reparación Electrónica & Soporte Informático</h1>
+      <p class="subtitle">Diagnóstico especializado, microelectrónica y reparación integral de Notebooks, PCs y placas en Puerto Madryn.</p>
+      
+      <div class="cta-group">
+        <a href='https://wa.me/5492804000000?text=Hola!%20Los%20contacto%20desde%20su%20sitio%20web' class='btn btn-wa'>💬 Contactar por WhatsApp</a>
+        <a href="data:text/vcard;charset=utf-8;base64,QkVHSU46VkNBUkQNClZFUlNJT046My4wDQpGTjtDSEFSU0VUPVVURi04OkluZm9ybcOhdGljYSBTdXINCk9SRztDSEFSU0VUPVVURi04OkluZm9ybcOhdGljYSBTdXINClRJVExFO0NIQVJTRVQ9VVRGLTg6TGFib3JhdG9yaW8gZGUgUmVwYXJhY2nDs24gRWxlY3Ryw7NuaWNhICYgU29wb3J0ZSBJbmZvcm3DoXRpY28NClRFTDtUWVBFPUNFTEwsVk9JQ0U6NTQ5MjgwNDAwMDAwMA0KRU1BSUw6aW5mb3JtYXRpY2FzdXJyQGdtYWlsLmNvbQ0KQURSO1RZUEU9V09SSztDSEFSU0VUPVVURi04Ojs7UHVlcnRvIE1hZHJ5bjtQdWVydG8gTWFkcnluO0NodWJ1dDs7QXJnZW50aW5hDQpVUkw6aHR0cHM6Ly9pbnN0YWdyYW0uY29tL2luZm9ybWF0aWNhc3Vycg0KRU5EOlZDQVJE" download="informatica_sur_contacto.vcf" class="btn btn-vcard">💾 Guardar en Mis Contactos</a>
+        <a href='https://instagram.com/informaticasurr' target='_blank' class='btn btn-ig'>📸 Instagram @informaticasurr</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Inform%C3%A1tica%20Sur%20Puerto%20Madryn%20Puerto%20Madryn" target="_blank" class="btn btn-gps">📍 Cómo Llegar (GPS)</a>
+      </div>
+    </header>
+
+    <!-- Historias y Promociones Recientes (Hasta 8 Fotos) -->
+    <section>
+      <h2 class="section-title">🔥 Trabajos y Promociones Destacadas</h2>
+      <div class="stories-track">
+        
+        <div class="story-card">
+          <div class="story-ring">
+            <div class="story-thumb">
+              <span class="story-emoji">💻</span>
+            </div>
+          </div>
+          <span class="story-caption">Reballing & Placas</span>
+          <span class="story-desc">Reparación de cortos en notebooks</span>
+        </div>
+        
+        <div class="story-card">
+          <div class="story-ring">
+            <div class="story-thumb">
+              <span class="story-emoji">❄️</span>
+            </div>
+          </div>
+          <span class="story-caption">Mantenimiento Térmico</span>
+          <span class="story-desc">Limpieza profunda y cambio de pasta</span>
+        </div>
+        
+        <div class="story-card">
+          <div class="story-ring">
+            <div class="story-thumb">
+              <span class="story-emoji">🖥️</span>
+            </div>
+          </div>
+          <span class="story-caption">Cambio de Pantallas</span>
+          <span class="story-desc">Displays LED y teclados originales</span>
+        </div>
+        
+        <div class="story-card">
+          <div class="story-ring">
+            <div class="story-thumb">
+              <span class="story-emoji">🚀</span>
+            </div>
+          </div>
+          <span class="story-caption">Upgrades SSD & RAM</span>
+          <span class="story-desc">Multiplicá la velocidad de tu equipo</span>
+        </div>
+        
+        <div class="story-card">
+          <div class="story-ring">
+            <div class="story-thumb">
+              <span class="story-emoji">🔋</span>
+            </div>
+          </div>
+          <span class="story-caption">Fuentes & Cargadores</span>
+          <span class="story-desc">Reparación de etapas de alimentación</span>
+        </div>
+        
+        <div class="story-card">
+          <div class="story-ring">
+            <div class="story-thumb">
+              <span class="story-emoji">💾</span>
+            </div>
+          </div>
+          <span class="story-caption">Recuperación de Datos</span>
+          <span class="story-desc">Rescate de archivos en discos dañados</span>
+        </div>
+        
+        <div class="story-card">
+          <div class="story-ring">
+            <div class="story-thumb">
+              <span class="story-emoji">⚙️</span>
+            </div>
+          </div>
+          <span class="story-caption">Instalación de SO</span>
+          <span class="story-desc">Windows, Linux y software a medida</span>
+        </div>
+        
+        <div class="story-card">
+          <div class="story-ring">
+            <div class="story-thumb">
+              <span class="story-emoji">🎮</span>
+            </div>
+          </div>
+          <span class="story-caption">Armado de PCs</span>
+          <span class="story-desc">Configuraciones Gamer y Workstation</span>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Propuesta de Valor -->
+    <section>
+      <h2 class="section-title">⭐ ¿Por qué elegirnos?</h2>
+      <div class="props-grid">
+        
+        <div class="prop-card">
+          <div class="prop-icon">🔬</div>
+          <h3>Microelectrónica Avanzada</h3>
+          <p>Reparación de circuitos integrados, fuentes y placas madre con instrumental de laboratorio.</p>
+        </div>
+        
+        <div class="prop-card">
+          <div class="prop-icon">⚡</div>
+          <h3>Diagnóstico Rápido</h3>
+          <p>Evaluación técnica precisa de fallas de hardware y software sin demoras innecesarias.</p>
+        </div>
+        
+        <div class="prop-card">
+          <div class="prop-icon">🛡️</div>
+          <h3>Garantía en Cada Trabajo</h3>
+          <p>Pruebas de estrés y control de calidad antes de cada entrega para tu total tranquilidad.</p>
+        </div>
+        
+        <div class="prop-card">
+          <div class="prop-icon">📍</div>
+          <h3>Compromiso Local</h3>
+          <p>Atención personalizada y trato directo en Puerto Madryn, Chubut.</p>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Sección Institucional / Sobre Nosotros -->
+    <section>
+      <h2 class="section-title">🏢 Sobre Nosotros</h2>
+      <div class="about-box">
+        <p>En Informática Sur somos un laboratorio técnico especializado en devolverle la operatividad a tus herramientas de trabajo y estudio. Diagnosticamos y reparamos a nivel de componentes electrónicos con instrumental de precisión. Nuestra misión es brindar soluciones transparentes, duraderas y con repuestos de máxima calidad para la comunidad de Puerto Madryn.</p>
+      </div>
+    </section>
+
+    <!-- Contacto & Ubicación -->
+    <section>
+      <h2 class="section-title">📍 Ubicación y Horarios de Atención</h2>
+      <div class="contact-box">
+        <div class="contact-item">📌 <strong>Dirección:</strong> Puerto Madryn, Puerto Madryn, Chubut</div>
+        <div class='contact-item'>💬 <strong>WhatsApp:</strong> +54 9 280 400-0000</div>
+        <div class='contact-item'>✉️ <strong>Email:</strong> informaticasurr@gmail.com</div>
+        <div class="contact-item">🕒 <strong>Atención:</strong> Lunes a Sábado - Presupuestos y Consultas</div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      Informática Sur · Sitio Web Comercial Oficial<br>
+      Desarrollado y Optimizado por 04-social-web-builder · Puerto Madryn
+    </footer>
+  </div>
+
+  <!-- Botón Flotante de WhatsApp -->
+  <a href='https://wa.me/5492804000000?text=Hola!%20Quisiera%20hacer%20una%20consulta' class='fab-wa' title='Escribir por WhatsApp'>💬</a>
+
+</body>
+</html>
