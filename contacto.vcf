@@ -1,10 +1,10 @@
 BEGIN:VCARD
 VERSION:3.0
-FN;CHARSET=UTF-8:Informática Sur
-ORG;CHARSET=UTF-8:Informática Sur
-TITLE;CHARSET=UTF-8:Laboratorio de Reparación Electrónica & Soporte Informático
+FN;CHARSET=UTF-8:INFORMATIC@SUR
+ORG;CHARSET=UTF-8:INFORMATIC@SUR
+TITLE;CHARSET=UTF-8:Taller de Reparación & Servicio Técnico Integral
 TEL;TYPE=CELL,VOICE:5492804880269
 EMAIL:informaticasurr@gmail.com
-ADR;TYPE=WORK;CHARSET=UTF-8:;;Puerto Madryn;Puerto Madryn;Chubut;;Argentina
+ADR;TYPE=WORK;CHARSET=UTF-8:;;San Martín 1570, Puerto Madryn;Puerto Madryn;Chubut;;Argentina
 URL:https://instagram.com/informaticasurr
 END:VCARD
